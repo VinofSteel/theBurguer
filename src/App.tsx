@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "./components/Header";
 import { ProductsList } from "./components/ProductsList";
 import { iProduct } from "./interfaces";
+import { api, iAxiosError, iAxiosResponse } from "./services/api";
 import StyledApp from "./styles/StyledApp";
 
 const App = () => {
@@ -19,6 +20,19 @@ const App = () => {
       setCartItems([...cartItems, {...item, quantity: 1}])
     }
   }
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const { data }: iAxiosResponse<iProduct> = await api.get('/products')
+        setProducts(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+
+    loadProducts()
+  })
 
   return (
     <StyledApp>
