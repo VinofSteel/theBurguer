@@ -30,7 +30,6 @@ const App = () => {
         console.error(error)
       }
     }
-
     loadProducts()
   })
 
