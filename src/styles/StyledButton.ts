@@ -5,7 +5,7 @@ interface iStyledButton {
     height: string,
 }
 
-export const StyledButton = styled.button<iStyledButton> `
+const StyledButton = styled.button<iStyledButton> `
     width: ${({width}) => width}px;
     height: ${({height}) => height}px;
 
@@ -32,3 +32,5 @@ export const StyledButton = styled.button<iStyledButton> `
         border: 2px solid var(--color-primary-50);
     } 
 `
+
+export default StyledButton

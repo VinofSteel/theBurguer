@@ -20,7 +20,7 @@ const StyledSearchBar = styled.form`
 
     input {
         width: 100%;
-        height: 36px;
+        height: 100%;
 
         background-color: white;
         border: none;
