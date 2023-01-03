@@ -1,7 +1,10 @@
+import StyledApp from "./styles/StyledApp";
+
 const App = () => {
   return (
-    <div>
-    </div>
+    <StyledApp>
+      
+    </StyledApp>
   );
 }
 
