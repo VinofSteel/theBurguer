@@ -19,6 +19,7 @@ A aplicação conta com sistemas de:
 * Carrinho funcional com sistema de detecção de itens que já estão presentes no mesmo, adição e remoção de itens
 * Versionamento com Git
 * Deploy com Vercel
+* Design responsivo com media queries
 
 ## A aplicação foi feita utilizando as tecnologias:
 
