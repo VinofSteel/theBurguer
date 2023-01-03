@@ -21,3 +21,21 @@ export interface iProductsListCard {
     element: iProduct,
     addItem: (item: iProduct) => void
 }
+
+export interface iCard {
+    cartItems: iProduct[],
+    addItem: (item: iProduct) => void,
+    removeItem: (item: iProduct) => void,
+    setCartItems: React.Dispatch<React.SetStateAction<iProduct[]>> 
+}
+
+export interface iCardTotal {
+    itemsPrice: number,
+    setCartItems: React.Dispatch<React.SetStateAction<iProduct[]>> 
+}
+
+export interface iCartCard {
+    element: iProduct,
+    addItem: (item: iProduct) => void,
+    removeItem: (item: iProduct) => void,
+}

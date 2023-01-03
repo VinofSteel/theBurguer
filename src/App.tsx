@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { Cart } from "./components/Cart";
 import { Header } from "./components/Header";
 import { ProductsList } from "./components/ProductsList";
 import { iProduct } from "./interfaces";
-import { api, iAxiosError, iAxiosResponse } from "./services/api";
+import { api, iAxiosResponse } from "./services/api";
 import StyledApp from "./styles/StyledApp";
 
 const App = () => {
@@ -18,6 +19,16 @@ const App = () => {
       setCartItems(cartItems.map(element => element.id === item.id ? {...find, quantity: find.quantity+1} : element))
     } else {
       setCartItems([...cartItems, {...item, quantity: 1}])
+    }
+  }
+
+  const removeItem = (item: iProduct) => {
+    const find: any = cartItems.find(element => element.id === item.id)
+
+    if (find.quantity === 1) {
+      setCartItems(cartItems.filter(element => element.id !== item.id))
+    } else {
+      setCartItems(cartItems.map(element => element.id === item.id ? {...find, quantity: find.quantity-1} : element))
     }
   }
 
@@ -38,9 +49,11 @@ const App = () => {
       <div className='header'>
           <Header setUserInput={setUserInput} />
 
-          <ProductsList addItem={addItem} products={products} userInput={userInput}/>
+          <main>
+            <ProductsList addItem={addItem} products={products} userInput={userInput}/>
+            <Cart addItem={addItem} removeItem={removeItem} cartItems={cartItems} setCartItems={setCartItems}/>
+          </main>
         </div>
-      
     </StyledApp>
   );
 }
