@@ -1,5 +1,5 @@
 # Vercel Link:
-## https://techhub-xi.vercel.app/
+## https://the-burguer.vercel.app/
 
 # Versão em Português:
 
@@ -14,9 +14,11 @@ A aplicação conta com sistemas de:
 
 * Consumo de API REST utilizando a biblioteca Axios
 * Estilização a base de TypeScript, utilizando a biblioteca styled-components
-* Controle de tipagem de variáveis e escalabilidade com TypeScript
+* Controle de tipagem e escalabilidade com TypeScript
 * Barra de pesquisa funcional e filtrável (funciona com qualquer input válido)
 * Carrinho funcional com sistema de detecção de itens que já estão presentes no mesmo, adição e remoção de itens
+* Versionamento com Git
+* Deploy com Vercel
 
 ## A aplicação foi feita utilizando as tecnologias:
 
